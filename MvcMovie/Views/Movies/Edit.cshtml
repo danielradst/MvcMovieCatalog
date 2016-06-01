@@ -3,12 +3,13 @@
 @{
     ViewBag.Title = "Edit";
 }
-<h2>Edit</h2>
+<div class="jumbotron">
+    <h2 class="text-center"><p style="text-decoration: underline">Edit  a  Movie</p></h2>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()    
     <div class="form-horizontal">
-        <h4>Movie</h4>
+       
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
@@ -64,3 +65,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+    </div>

@@ -2,19 +2,31 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2>Index</h2>
-<p>
-    @Html.ActionLink("Create New", "Create")
+
+<div class="jumbotron">
+<h1 class="text-center">Movie List</h1>
+    <h3 class="text-center"> here you can add, edit or delete movie titles and their features</h3>
+</div>
+
+<div class="jumbotron">
+    <h2>Search for a Movie! </h2>
     @using (Html.BeginForm("Index", "Movies", FormMethod.Get))
     {
-    <p>
+        <p>
+            <h1>        </h1>
+            <h2>        </h2>
+        </p>
+    <p class="">
         Genre: @Html.DropDownList("movieGenre", "All")
         Title: @Html.TextBox("SearchString")
         <input type="submit" value="Filter" />
     </p>
     }
-</p>
-<table class="table">
+    <p class="text-right">
+    @Html.ActionLink("Add New", "Create")
+        </p>
+</div>
+<table class="table table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)

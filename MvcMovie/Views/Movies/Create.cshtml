@@ -3,8 +3,8 @@
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Create</h2>
+<div class="jumbotron">
+<h2 class="text-center"><p style="text-decoration: underline">Add  a  Movie</p></h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,18 +12,18 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Movie</h4>
         <hr />
         @Html.ValidationSummary(true)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Title)
                 @Html.ValidationMessageFor(model => model.Title)
             </div>
         </div>
-        @*Fields removed for brevity.*@
+       
         <div class="form-group">
             @Html.LabelFor(model => model.ReleaseDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -58,7 +58,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Add" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -71,3 +71,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+    </div>
